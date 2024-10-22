@@ -13,10 +13,22 @@ import subprocess
 import shutil
 from datetime import datetime
 
-logging.basicConfig(level=logging.INFO, filename='./app.log', filemode='a', 
-                    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+# 创建日志记录器
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
+# 创建处理器 - 控制台处理器 (StreamHandler) 和文件处理器 (FileHandler)
+console_handler = logging.StreamHandler()
+file_handler = logging.FileHandler('app.log')
+
+# 设置日志格式
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+console_handler.setFormatter(formatter)
+file_handler.setFormatter(formatter)
+
+# 将处理器添加到记录器
+logger.addHandler(console_handler)
+logger.addHandler(file_handler)
 
 test_summary_file_path = ""
 test_details_file = ""

@@ -121,4 +121,4 @@ if __name__ == '__main__':
     test_details_file = os.path.abspath(argv[2])
     load_data(test_summary_data_file, test_details_file)
 
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
