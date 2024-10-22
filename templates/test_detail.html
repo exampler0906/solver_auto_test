@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试详情</title>
+    <style>
+        .fail {
+            color: red;
+        }
+        .pass {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>测试详情</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Case 名称</th>
+                <th>测试结果</th>
+                <th>测试用时</th>
+                <th>落地文件</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for case in cases %}
+            <tr>
+                <td>{{ case.case_name }}</td>
+                <td class="{% if case.result == 'fail' %}fail{% else %}pass{% endif %}">
+                    {{ case.result }}
+                </td>
+                <td>{{ case.time }}</td>
+                <td><a href="/download/{{ case.result_file }}">下载</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="/">返回测试汇总</a>
+</body>
+</html>

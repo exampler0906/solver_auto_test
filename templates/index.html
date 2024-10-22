@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试汇总</title>
+</head>
+<body>
+    <h1>测试汇总</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>测试名称</th>
+                <th>测试时间</th>
+                <th>测试链接</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for test in tests %}
+            <tr>
+                <td>{{ test.name }}</td>
+                <td>{{ test.time }}</td>
+                <td><a href="{{ test.link }}">查看详情</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
