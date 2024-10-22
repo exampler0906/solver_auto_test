@@ -138,7 +138,7 @@ def run_solver(case_id):
 
     current_case_storage_path = f"{current_time}/" + str(case_id)
     current_case_storage_path = os.path.abspath(current_case_storage_path)
-    command = ["mpirun", "-n", "8", "./oil_solver", f"{current_case_storage_path}/property.json", "1"]
+    command = ["mpirun", "-n", "64", "./oil_solver", f"{current_case_storage_path}/property.json", "1"]
 
     
     # 启动子进程，捕获输出并等待其完成
@@ -201,7 +201,7 @@ def send_message_to_feishu():
     # 构造飞书消息体部分
     test_details_url = f"{url}/test_detail/{current_time}"
     
-    result = f"<at user_id=\"all\">所有人</at>\n {current_time}测试测试完毕\n 测试结果详情链接：{test_details_url}" 
+    result = f"<at user_id=\"all\">所有人</at>\n {current_time}测试测试完毕\n 测试结果详情链接：{test_details_url}\n 测试总览链接: {url}" 
 
     # 构造消息json
     json_data = {}
@@ -251,7 +251,7 @@ def run_auto_test(url, template_file_path, total_test_time):
         logger.warning(f"store test summary data fail")
 
     # 发送飞书消息
-    #send_message_to_feishu()
+    send_message_to_feishu()
 
 
 if __name__ == '__main__':

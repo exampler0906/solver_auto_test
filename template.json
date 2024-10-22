@@ -592,15 +592,15 @@
             },
             "processGridSize": [
                 [
-                    4,
-                    2,
+                    8,
+                    8,
                     1
                 ]
             ],
             "type": "SemiStructured"
         },
         "solver": {
-            "process_num": 16,
+            "process_num": 64,
             "transient_controller": {
                 "cfl": 0,
                 "monitor_step": 1,
