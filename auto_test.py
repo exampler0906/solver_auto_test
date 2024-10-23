@@ -11,6 +11,7 @@ import time
 import zipfile
 import subprocess
 import shutil
+import mesh_generator
 from datetime import datetime
 
 # 创建日志记录器
@@ -33,6 +34,7 @@ logger.addHandler(file_handler)
 test_summary_file_path = ""
 test_details_file = ""
 current_time = ""
+template_file_path = ""
 
 # 设置环境变量
 os.environ["GTEST_CATCH_EXCEPTIONS"] = "0"
@@ -40,12 +42,14 @@ os.environ["OMP_NUM_THREADS"] = "1"
 
 # 初始化测试环境
 # url 为 ip + port
-def init_environment(url):
+def init_environment(url, template_file_path):
 
     global test_details_file,test_summary_file_path,current_time
 
+    template_file_name = template_file_path.split("/")[-1]
+
     # 确认server在线，运行状态正常
-    response = requests.get(url + "/is_alive")
+    response = requests.get(url + f"/is_alive/{template_file_name}")
     #logger.info(response.text)
     if response.status_code == 200:
         json_obj = json.loads(response.text)
@@ -77,9 +81,39 @@ def init_environment(url):
     
     return True
 
+def analyze_json_array(json_array, need_test_keys):
+    if isinstance(json_array, list):
+        for item in json_array:
+            if isinstance(item, list):
+                analyze_json_array(item, need_test_keys)
+            elif isinstance(item, dict):
+                analyze_json(item, need_test_keys)
+
 
 def analyze_json(json_object, need_test_keys):
     for key, value in json_object.items():
+        
+        # sgt 气液相渗表-气体饱和度主导特殊处理
+        if key == "SGT" and "test_item" in value:
+            json_object[key]["Values"].append([0, 0, 1, 0])
+            
+            # 拍脑袋想的，行数理论上可以更多
+            sgt_table_row_count = random.randint(2, 20)
+            sg_temp = 0
+            krg_temp = 0
+            krog_temp = 1
+            pcog_temp = 0
+
+            # 极小概率取到下界，小了不能再小
+            for i in range(2, random.randint(3, 21)):
+                sg_temp = random.uniform(sg_temp, 1)
+                krg_temp = random.uniform(krg_temp, 1)
+                krog_temp = random.uniform(0, krog_temp)
+                pcog_temp = random.uniform(pcog_temp, 1)
+                json_object[key]["Values"].append([sg_temp, krg_temp, krog_temp, pcog_temp])
+            continue
+
+
         if isinstance(value, dict) and "test_item" in value and "value_range" in value:
             value_range = value["value_range"]
             if len(value_range) != 2:
@@ -89,12 +123,18 @@ def analyze_json(json_object, need_test_keys):
             min_value = value_range[0]
             max_value = value_range[1]
 
-            random_num = random.randint(min_value, max_value)
+            if isinstance(min_value, int):
+                random_num = random.randint(min_value, max_value)
+            else:
+                random_num = random.uniform(min_value, max_value)
             json_object[key] = random_num
             need_test_keys.append(key)
 
         elif isinstance(value, dict):
             analyze_json(value, need_test_keys)
+
+        elif isinstance(value, list):
+            analyze_json_array(value, need_test_keys)
 
     return True
     
@@ -164,7 +204,7 @@ def run_solver(case_id):
         end_time = time.time()
         execution_time = end_time - start_time
 
-        zip_file_path = f"{current_time}/" + str(case_id) + ".zip"
+        zip_file_path = str(case_id) + ".zip"
 
         # 上传测试结果
         logger.info(f"test case {case_id} executed success!")
@@ -180,7 +220,7 @@ def run_solver(case_id):
         end_time = time.time()
         execution_time = end_time - start_time
 
-        zip_file_path = f"{current_time}/" + str(case_id) + ".zip"
+        zip_file_path = str(case_id) + ".zip"
 
         response = requests.get(url + f"/append_test_details?test_id={current_time}&case_name={case_id}&result=fail&time={execution_time}s&result_file={zip_file_path}")
         logger.warning(f"test case {case_id} executed fail!")
@@ -188,9 +228,6 @@ def run_solver(case_id):
             logger.info(f"write result to test details success")
         else:
             logger.warning(f"write result to test details fail")
-
-    # 将结果文件压缩
-    compress_directory_to_zip(current_case_storage_path, zip_file_path)
 
     # 将单次test_case的测试结果落地
     response = requests.get(url + f"/store_test_details_data")
@@ -200,13 +237,18 @@ def run_solver(case_id):
         logger.warning(f"store test details data fail")
 
     # 删除无用文件
-    for filename in os.listdir(current_case_storage_path):
-        file_path = os.path.join(current_case_storage_path, filename)
-        if os.path.isfile(file_path) and (filename != "property.json" and filename != "output.log") :  # 只处理文件
+    for file_name in os.listdir(current_case_storage_path):
+        file_path = os.path.join(current_case_storage_path, file_name)
+
+        if os.path.isfile(file_path) and (file_name != "property.json" and file_name != "output.log" and file_name != "template.json" and not file_name.endswith(".vts")) :  # 只处理文件
              os.remove(file_path)
 
+    # 将结果文件压缩
+    compress_directory_to_zip(current_case_storage_path, f"{current_time}/" + zip_file_path)
+
     # 拷贝模板文件到当前文件夹
-    shutil.copy("./template.json", f"{current_case_storage_path}/template.json") 
+    template_file_name = template_file_path.split("/")[-1]
+    shutil.copy(template_file_path, f"{current_case_storage_path}/{template_file_name}") 
 
 def send_message_to_feishu():
 
@@ -236,7 +278,7 @@ def send_message_to_feishu():
 
 
 def run_auto_test(url, template_file_path, total_test_time):
-    if init_environment(url):
+    if init_environment(url, template_file_path):
         logger.info(f"environment initial success")
     else:
         logger.error(f"environment initial failed")
@@ -252,6 +294,8 @@ def run_auto_test(url, template_file_path, total_test_time):
         else:
             logger.error1(f"random change parameter failed")
             return
+        mesh_generator.mesh_generator_interface(f"{current_time}/{i}/property.json", f"mesh", logger)
+        logger.info(f"mesh generate finish")
         run_solver(i)
         logger.info(f"test case {i} finish")
     
@@ -263,7 +307,7 @@ def run_auto_test(url, template_file_path, total_test_time):
         logger.warning(f"store test summary data fail")
 
     # 发送飞书消息
-    send_message_to_feishu()
+    #send_message_to_feishu()
 
 
 if __name__ == '__main__':

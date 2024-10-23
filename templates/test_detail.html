@@ -21,6 +21,9 @@
                 <th>测试结果</th>
                 <th>测试用时</th>
                 <th>落地文件</th>
+                <th>求解日志</th>
+                <th>求解配置</th>
+                <th>模板文件</th>
             </tr>
         </thead>
         <tbody>
@@ -31,7 +34,10 @@
                     {{ case.result }}
                 </td>
                 <td>{{ case.time }}</td>
-                <td><a href="/download/{{ case.result_file }}">下载</a></td>
+                <td><a href="/download/{{ test_id }}/{{ case.result_file }}">下载</a></td>
+                <td><a href="/show_file/{{ test_id }}/{{ case.case_name }}/output.log">求解日志预览</a></td>
+                <td><a href="/show_file/{{ test_id }}/{{ case.case_name }}/property.json">求解配置预览</a></td>
+                <td><a href="/show_file/{{ test_id }}/{{ case.case_name }}/{{ template_file_name }}">模板文件预览</a></td>
             </tr>
             {% endfor %}
         </tbody>

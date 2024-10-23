@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # server.py
-from flask import Flask, render_template, request, send_from_directory, jsonify
+from flask import Flask, render_template, request, send_from_directory, jsonify, render_template_string
 import os
 import json
 import sys
@@ -14,7 +14,7 @@ test_summary_data = []
 test_details = {}
 test_summary_data_file = ""
 test_details_file = ""
-
+g_template_file_name = ""
 
 # 路由：测试汇总页面
 @app.route('/')
@@ -25,14 +25,38 @@ def index():
 @app.route('/test_detail/<test_id>')
 def test_detail(test_id):
     cases = test_details.get(test_id, [])
-    return render_template('test_detail.html', cases=cases)
+    return render_template('test_detail.html', cases=cases, test_id = test_id, template_file_name=g_template_file_name)
 
 # 路由：下载落地文件
-@app.route('/download/<test_id>/<filename>')
-def download_file(test_id, filename):
+@app.route('/download/<test_id>/<file_name>')
+def download_file(test_id, file_name):
     # 文件存储目录
     directory = os.path.join(app.root_path)
-    return send_from_directory(directory, test_id + "/" +filename, as_attachment=True)
+    return send_from_directory(directory, test_id + "/" +file_name, as_attachment=True)
+
+# 展示求解日志，模板文件和配置文件
+@app.route('/show_file/<test_id>/<case_id>/<file_name>')
+def show_file(test_id, case_id, file_name):
+    # 文件存储目录
+    directory = os.path.join(app.root_path)
+    file_path = os.path.join(directory, test_id, case_id, file_name)
+    try:
+        # 读取文件内容
+        with open(file_path, 'r', encoding='utf-8') as file:
+            content = file.read()
+        # 将文件内容展示在网页上
+        return render_template_string("""
+        <html>
+        <head><title>File Content</title></head>
+        <body>
+            <h1>File: {{ file_name }}</h1>
+            <pre>{{ content }}</pre>
+        </body>
+        </html>
+        """, file_name=file_name, content=content)
+    except FileNotFoundError:
+        return  jsonify({"message":f"File '{file_name}' not found"}), 404
+
 
 @app.route('/append_test_summary', methods=['GET'])
 def append_test_summary():
@@ -70,8 +94,9 @@ def append_test_details():
     return jsonify({"message": "test details added successfully!", "new item": json_obj})
 
 
-@app.route("/is_alive", methods=['GET'])
-def get_alive():
+@app.route("/is_alive/<template_file_name>", methods=['GET'])
+def get_alive(template_file_name):
+    g_template_file_name = template_file_name
     return jsonify({"test_summary_file_path":test_summary_data_file, "test_details_file": test_details_file})
 
 

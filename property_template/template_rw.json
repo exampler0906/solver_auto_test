@@ -193,7 +193,7 @@
                         ]
                     },
                     "InitialSetting": {
-                        "PRES": { "test_item" : true, "value_range":[10000, 300000] },
+                        "PRES": 15000,
                         "SW": 0,
                         "Type": "user"
                     },
@@ -493,7 +493,7 @@
                                     "Status": "open"
                                 }
                             ],
-                            "RW": 0.1,
+                            "RW": { "test_item" : true, "value_range":[0.1, 1.0] },
                             "SKIN": 0,
                             "Status": "close",
                             "WFRAC": 1
@@ -542,7 +542,7 @@
                                     "Status": "open"
                                 }
                             ],
-                            "RW": 0.1,
+                            "RW": { "test_item" : true, "value_range":[0.1, 1.0] },
                             "SKIN": 0,
                             "Status": "close",
                             "WFRAC": 1

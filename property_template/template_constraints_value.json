@@ -1,0 +1,619 @@
+      
+{
+    "project_demo": {
+        "field": {
+            "fluid": {
+                "TwoPhaseOilGasMultiComp": {
+                    "BoundaryCondition": {
+                    },
+                    "Components": {
+                        "ACF": [
+                            0.008,
+                            0.225,
+                            0.18283333,
+                            0.33136225,
+                            0.70851707,
+                            1.1676567
+                        ],
+                        "BIN": [
+                            [
+                                -1,
+                                -1,
+                                -1,
+                                -1,
+                                -1,
+                                -1
+                            ],
+                            [
+                                0.105,
+                                -1,
+                                -1,
+                                -1,
+                                -1,
+                                -1
+                            ],
+                            [
+                                0.013438527,
+                                0.12,
+                                -1,
+                                -1,
+                                -1,
+                                -1
+                            ],
+                            [
+                                0.032062612,
+                                0.115,
+                                0.0041858314,
+                                -1,
+                                -1,
+                                -1
+                            ],
+                            [
+                                0.073590238,
+                                0.115,
+                                0.025994134,
+                                0.0095482974,
+                                -1,
+                                -1
+                            ],
+                            [
+                                0.1162653,
+                                0.115,
+                                0.055605985,
+                                0.030344088,
+                                0.0060879807,
+                                -1
+                            ]
+                        ],
+                        "COMPNUM": 6,
+                        "EOSTYPE": "PR",
+                        "HEATING_VALUES": [
+                            844.29001,
+                            0,
+                            2619.0034,
+                            4912.4576,
+                            10843.903,
+                            22082.441
+                        ],
+                        "MOLEFRAC": [
+                            0.463,
+                            0.0164,
+                            0.2052,
+                            0.19108,
+                            0.08113,
+                            0.04319
+                        ],
+                        "MW": [
+                            16.043,
+                            44.01,
+                            55.786167,
+                            102.5,
+                            232.53333,
+                            442.85714
+                        ],
+                        "NAMES": [
+                            "N2toCH4",
+                            "CO2",
+                            "C2H6_NC5",
+                            "FC6toFC9",
+                            "FC10_C24",
+                            "FC25_C45"
+                        ],
+                        "OMEGAA": [
+                            0.45723553,
+                            0.45723553,
+                            0.45723553,
+                            0.45723553,
+                            0.45723553,
+                            0.45723553
+                        ],
+                        "OMEGAB": [
+                            0.077796074,
+                            0.077796074,
+                            0.077796074,
+                            0.077796074,
+                            0.077796074,
+                            0.077796074
+                        ],
+                        "PCHOR": [
+                            77,
+                            78,
+                            181.03333,
+                            296.1889,
+                            612.83125,
+                            979.3812
+                        ],
+                        "PCRIT": [
+                            45.4,
+                            72.8,
+                            38.104705,
+                            29.800673,
+                            16.72706,
+                            8.9857592
+                        ],
+                        "SG": [
+                            0.3,
+                            0.818,
+                            0.55417153,
+                            0.73595877,
+                            0.85010528,
+                            0.91950392
+                        ],
+                        "TB": [
+                            -161.45,
+                            -78.45,
+                            20.862914,
+                            107.77856,
+                            300.38254,
+                            486.15773
+                        ],
+                        "TCRIT": [
+                            190.6,
+                            304.2,
+                            411.09889,
+                            556.36643,
+                            743.88914,
+                            904.26974
+                        ],
+                        "TRES": 111.3,
+                        "VCRIT": [
+                            0.099,
+                            0.094,
+                            0.24415453,
+                            0.40333515,
+                            0.86220719,
+                            1.5802132
+                        ],
+                        "VISCOSITY": {
+                            "MIXVC": 1,
+                            "MODEL": "YT-HZ",
+                            "VISCOEFF": [
+                                0.1023,
+                                0.023364,
+                                0.058533,
+                                -0.040758,
+                                0.0093324
+                            ]
+                        },
+                        "VSHIFT": [
+                            0,
+                            0,
+                            0,
+                            0,
+                            0,
+                            0
+                        ],
+                        "ZFACTOR": [
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1,
+                            -1
+                        ]
+                    },
+                    "InitialSetting": {
+                        "PRES": 15000,
+                        "SW": 0,
+                        "Type": "user"
+                    },
+                    "Output": {
+                        "Dates": {
+                            "DateList": [
+                                "2025-01-01_00-00-00",
+                                "2025-02-01_00-00-00",
+                                "2025-03-01_00-00-00",
+                                "2025-04-01_00-00-00",
+                                "2025-05-01_00-00-00",
+                                "2025-06-01_00-00-00",
+                                "2025-07-01_00-00-00",
+                                "2025-08-01_00-00-00",
+                                "2025-09-01_00-00-00",
+                                "2025-10-01_00-00-00",
+                                "2025-11-01_00-00-00",
+                                "2025-12-01_00-00-00",
+                                "2026-01-01_00-00-00",
+                                "2026-02-01_00-00-00",
+                                "2026-03-01_00-00-00",
+                                "2026-04-01_00-00-00",
+                                "2026-05-01_00-00-00",
+                                "2026-06-01_00-00-00",
+                                "2026-07-01_00-00-00",
+                                "2026-08-01_00-00-00",
+                                "2026-09-01_00-00-00",
+                                "2026-10-01_00-00-00",
+                                "2026-11-01_00-00-00",
+                                "2026-12-01_00-00-00",
+                                "2027-01-01_00-00-00"
+                            ],
+                            "DateStruct": [
+                                {
+                                    "end_time_day": 1,
+                                    "end_time_month": 1,
+                                    "end_time_year": 2027,
+                                    "index": 1,
+                                    "start_time_day": 1,
+                                    "start_time_month": 1,
+                                    "start_time_year": 2025,
+                                    "unit": 1
+                                }
+                            ]
+                        },
+                        "InitDate": "2024-10-22_00-00-00",
+                        "Variables": {
+                            "Properties": [
+                                "KRO",
+                                "ZOGW'FC25_C45'",
+                                "X'FC25_C45'",
+                                "ZOGW'FC10_C24'",
+                                "MWG",
+                                "PERMI",
+                                "X'N2toCH4'",
+                                "Y'C2H6_NC5'",
+                                "ZOGW'C2H6_NC5'",
+                                "PERMK",
+                                "X'FC6toFC9'",
+                                "Y'FC6toFC9'",
+                                "DENO",
+                                "VISO",
+                                "ZOGW'FC6toFC9'",
+                                "Sg",
+                                "MWO",
+                                "PRES",
+                                "POR",
+                                "THICKNESS",
+                                "Y'FC25_C45'",
+                                "X'C2H6_NC5'",
+                                "RHOO",
+                                "KRG",
+                                "PERMJ",
+                                "ZOGW'CO2'",
+                                "Y'N2toCH4'",
+                                "DENG",
+                                "RHOG",
+                                "SO",
+                                "X'CO2'",
+                                "TEMP",
+                                "VISG",
+                                "Y'FC10_C24'",
+                                "X'FC10_C24'",
+                                "Y'CO2'",
+                                "ZOGW'N2toCH4'"
+                            ],
+                            "Well": [
+                                "WaterCut",
+                                "GasOilRatio",
+                                "BottomholePressure",
+                                "OilRate",
+                                "GasRate",
+                                "LiquidRate",
+                                "OilRate-Monthly",
+                                "GasRate-Monthly",
+                                "LiquidRate-Monthly",
+                                "OilRate-Yearly",
+                                "GasRate-Yearly",
+                                "LiquidRate-Yearly",
+                                "CumulativeOil",
+                                "CumulativeGas",
+                                "CumulativeLiquid",
+                                "CumulativeGasOilRatio",
+                                "OilMassRate",
+                                "GasMassRate",
+                                "CumulativeOilMass",
+                                "CumulativeGasMass",
+                                "AverageFormationPressure"
+                            ]
+                        }
+                    },
+                    "Reservoir": {
+                        "Grid": {
+                            "ACTIVE": "twophase-6-20_active.bin",
+                            "IVAR": [
+                                50,
+                                50,
+                                50,
+                                50,
+                                50,
+                                50,
+                                50,
+                                50,
+                                50,
+                                50,
+                                50,
+                                50,
+                                50,
+                                50,
+                                50,
+                                50,
+                                50,
+                                50,
+                                50,
+                                50
+                            ],
+                            "JVAR": [
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50,
+                                -50
+                            ],
+                            "KVAR": [
+                                0.5,
+                                0.5
+                            ],
+                            "NX": 20,
+                            "NY": 20,
+                            "NZ": 2,
+                            "PERMI": 50,
+                            "PERMJ": 50,
+                            "PERMK": 50,
+                            "POR": 0.25
+                        },
+                        "GridType": "structural_mesh",
+                        "RockCompressibility": {
+                            "CPOR": 0,
+                            "PRPOR": 101.325
+                        }
+                    },
+                    "RockFluid": {
+                        "SGT": {
+                            "TableName": "SGT",
+                            "Values": [
+                                [
+                                    0,
+                                    0,
+                                    1,
+                                    0
+                                ],
+                                [
+                                    0.322,
+                                    0.103684,
+                                    0.459684,
+                                    0
+                                ],
+                                [
+                                    0.35,
+                                    0.1225,
+                                    0.4225,
+                                    0
+                                ],
+                                [
+                                    0.4,
+                                    0.16,
+                                    0.36,
+                                    0
+                                ],
+                                [
+                                    0.45,
+                                    0.2025,
+                                    0.3025,
+                                    0
+                                ],
+                                [
+                                    0.5,
+                                    0.25,
+                                    0.25,
+                                    0
+                                ],
+                                [
+                                    0.55,
+                                    0.3025,
+                                    0.2025,
+                                    0
+                                ],
+                                [
+                                    0.6,
+                                    0.36,
+                                    0.16,
+                                    0
+                                ],
+                                [
+                                    0.65,
+                                    0.4225,
+                                    0.1225,
+                                    0
+                                ],
+                                [
+                                    0.678,
+                                    0.459684,
+                                    0,
+                                    0
+                                ]
+                            ]
+                        },
+                        "SWT": {
+                            "TableName": "SWT",
+                            "Values": [
+                                [
+                                    0,
+                                    0,
+                                    0,
+                                    0
+                                ]
+                            ]
+                        }
+                    },
+                    "Wells": [
+                        {
+                            "DIR": "K",
+                            "Events": [
+                                {
+                                    "Constraints": [
+                                        {
+                                            "Action": "continue",
+                                            "Limit": "MIN",
+                                            "Parameter": "BHP",
+                                            "Value": { "test_item" : true, "value_range":[5000, 15000] }
+                                        }
+                                    ],
+                                    "Date": "2000-01-01",
+                                    "InjectedFluid": "",
+                                    "MOLEFRAC": [
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "Status": "open",
+                                    "Type": "producer"
+                                }
+                            ],
+                            "GEOFAC": 0.37,
+                            "InjectedFluid": "water",
+                            "Name": "PRO",
+                            "Perforations": [
+                                {
+                                    "BlockBottom": 1200.5,
+                                    "BlockIdx": [
+                                        20,
+                                        20,
+                                        2
+                                    ],
+                                    "BlockTop": 1201,
+                                    "Connection": 0,
+                                    "FF": 1,
+                                    "Length": 0.5,
+                                    "Status": "open"
+                                }
+                            ],
+                            "RW": 0.1,
+                            "SKIN": 0,
+                            "Status": "close",
+                            "WFRAC": 1
+                        },
+                        {
+                            "DIR": "K",
+                            "Events": [
+                                {
+                                    "Constraints": [
+                                        {
+                                            "Action": "continue",
+                                            "Limit": "MAX",
+                                            "Parameter": "STG",
+                                            "Value": { "test_item" : true, "value_range":[100.0, 2000.0] }
+                                        }
+                                    ],
+                                    "Date": "2000-01-01",
+                                    "InjectedFluid": "solvent",
+                                    "MOLEFRAC": [
+                                        0,
+                                        1,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "Status": "open",
+                                    "Type": "injector"
+                                }
+                            ],
+                            "GEOFAC": 0.37,
+                            "InjectedFluid": "solvent",
+                            "Name": "INJ",
+                            "Perforations": [
+                                {
+                                    "BlockBottom": 1200.5,
+                                    "BlockIdx": [
+                                        1,
+                                        1,
+                                        2
+                                    ],
+                                    "BlockTop": 1201,
+                                    "Connection": 0,
+                                    "FF": 1,
+                                    "Length": 0.5,
+                                    "Status": "open"
+                                }
+                            ],
+                            "RW": 0.1,
+                            "SKIN": 0,
+                            "Status": "close",
+                            "WFRAC": 1
+                        }
+                    ],
+                    "nsolver": {
+                        "NewtonLS": {
+                            "atol": 1e-05,
+                            "converged_max_it": true,
+                            "dtol": 1000,
+                            "lineSearchType": "basic",
+                            "lsolver": {
+                                "gmres": {
+                                    "atol": 1e-06,
+                                    "converged_max_it": true,
+                                    "dtol": 1000,
+                                    "maxit": 300,
+                                    "monitor_step": 1,
+                                    "pc": {
+                                        "RASchwarz": {
+                                            "overlap": 1,
+                                            "subdomain_solver": {
+                                                "ilu": {
+                                                    "fill_in_level": 0
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "restart": 30,
+                                    "rtol": 1e-08,
+                                    "zero_initialize": false
+                                }
+                            },
+                            "maxit": 10,
+                            "monitor_step": 1,
+                            "rtol": 1e-20
+                        }
+                    }
+                }
+            }
+        },
+        "mesh": {
+            "file": {
+                "format": "Plot3D",
+                "gridfile": "twophase-6-20.x",
+                "inpfile": "twophase-6-20.inp"
+            },
+            "processGridSize": [
+                [
+                    8,
+                    8,
+                    1
+                ]
+            ],
+            "type": "SemiStructured"
+        },
+        "solver": {
+            "process_num": 64,
+            "transient_controller": {
+                "cfl": 0,
+                "monitor_step": 1,
+                "steady": false,
+                "time_step": 86400,
+                "total_time": 86401,
+                "totaln": 1,
+                "writeInterval": 1,
+                "writeSkipInitField": false
+            },
+            "type": "SegregatedSolver"
+        }
+    }
+}
+
+    
