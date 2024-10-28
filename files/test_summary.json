@@ -1,4 +1,12 @@
 {
-    "test_summary": [
-    ]
+    "test_summary": {
+        "template_pres.json测试": {
+            "time": "2024-10-28-07-58-46",
+            "link": "/test_detail/2024-10-28-07-58-46",
+            "success_rate": "",
+            "average_time": "",
+            "average_success_time": "",
+            "average_fail_time": ""
+        }
+    }
 }

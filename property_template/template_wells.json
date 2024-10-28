@@ -204,27 +204,7 @@
                                 "2025-02-01_00-00-00",
                                 "2025-03-01_00-00-00",
                                 "2025-04-01_00-00-00",
-                                "2025-05-01_00-00-00",
-                                "2025-06-01_00-00-00",
-                                "2025-07-01_00-00-00",
-                                "2025-08-01_00-00-00",
-                                "2025-09-01_00-00-00",
-                                "2025-10-01_00-00-00",
-                                "2025-11-01_00-00-00",
-                                "2025-12-01_00-00-00",
-                                "2026-01-01_00-00-00",
-                                "2026-02-01_00-00-00",
-                                "2026-03-01_00-00-00",
-                                "2026-04-01_00-00-00",
-                                "2026-05-01_00-00-00",
-                                "2026-06-01_00-00-00",
-                                "2026-07-01_00-00-00",
-                                "2026-08-01_00-00-00",
-                                "2026-09-01_00-00-00",
-                                "2026-10-01_00-00-00",
-                                "2026-11-01_00-00-00",
-                                "2026-12-01_00-00-00",
-                                "2027-01-01_00-00-00"
+                                "2025-05-01_00-00-00"
                             ],
                             "DateStruct": [
                                 {
@@ -449,104 +429,6 @@
                         }
                     },
                     "Wells": [
-                        {
-                            "DIR": "K",
-                            "Events": [
-                                {
-                                    "Constraints": [
-                                        {
-                                            "Action": "continue",
-                                            "Limit": "MIN",
-                                            "Parameter": "BHP",
-                                            "Value": 10000
-                                        }
-                                    ],
-                                    "Date": "2000-01-01",
-                                    "InjectedFluid": "",
-                                    "MOLEFRAC": [
-                                        0,
-                                        0,
-                                        0,
-                                        0,
-                                        0,
-                                        0
-                                    ],
-                                    "Status": "open",
-                                    "Type": "producer"
-                                }
-                            ],
-                            "GEOFAC": 0.37,
-                            "InjectedFluid": "water",
-                            "Name": "PRO",
-                            "Perforations": [
-                                {
-                                    "BlockBottom": 1200.5,
-                                    "BlockIdx": [
-                                        20,
-                                        20,
-                                        2
-                                    ],
-                                    "BlockTop": 1201,
-                                    "Connection": 0,
-                                    "FF": 1,
-                                    "Length": 0.5,
-                                    "Status": "open"
-                                }
-                            ],
-                            "RW": { "test_item" : true, "value_range":[0.1, 1.0] },
-                            "SKIN": 0,
-                            "Status": "close",
-                            "WFRAC": 1
-                        },
-                        {
-                            "DIR": "K",
-                            "Events": [
-                                {
-                                    "Constraints": [
-                                        {
-                                            "Action": "continue",
-                                            "Limit": "MAX",
-                                            "Parameter": "STG",
-                                            "Value": 129.6
-                                        }
-                                    ],
-                                    "Date": "2000-01-01",
-                                    "InjectedFluid": "solvent",
-                                    "MOLEFRAC": [
-                                        0,
-                                        1,
-                                        0,
-                                        0,
-                                        0,
-                                        0
-                                    ],
-                                    "Status": "open",
-                                    "Type": "injector"
-                                }
-                            ],
-                            "GEOFAC": 0.37,
-                            "InjectedFluid": "solvent",
-                            "Name": "INJ",
-                            "Perforations": [
-                                {
-                                    "BlockBottom": 1200.5,
-                                    "BlockIdx": [
-                                        1,
-                                        1,
-                                        2
-                                    ],
-                                    "BlockTop": 1201,
-                                    "Connection": 0,
-                                    "FF": 1,
-                                    "Length": 0.5,
-                                    "Status": "open"
-                                }
-                            ],
-                            "RW": { "test_item" : true, "value_range":[0.1, 1.0] },
-                            "SKIN": 0,
-                            "Status": "close",
-                            "WFRAC": 1
-                        }
                     ],
                     "nsolver": {
                         "NewtonLS": {

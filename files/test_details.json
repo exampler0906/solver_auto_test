@@ -1,1 +1,604 @@
-{}
+{
+    "2024-10-28-07-58-46": [
+        {
+            "case_name": "0",
+            "result": "fail",
+            "time": "3.0698559284210205s",
+            "result_file": "0.zip"
+        },
+        {
+            "case_name": "1",
+            "result": "fail",
+            "time": "3.2002193927764893s",
+            "result_file": "1.zip"
+        },
+        {
+            "case_name": "2",
+            "result": "pass",
+            "time": "10.863768100738525s",
+            "result_file": "2.zip"
+        },
+        {
+            "case_name": "3",
+            "result": "fail",
+            "time": "4.7300124168396s",
+            "result_file": "3.zip"
+        },
+        {
+            "case_name": "4",
+            "result": "fail",
+            "time": "2.2883501052856445s",
+            "result_file": "4.zip"
+        },
+        {
+            "case_name": "5",
+            "result": "fail",
+            "time": "3.754037380218506s",
+            "result_file": "5.zip"
+        },
+        {
+            "case_name": "6",
+            "result": "fail",
+            "time": "2.1028552055358887s",
+            "result_file": "6.zip"
+        },
+        {
+            "case_name": "7",
+            "result": "fail",
+            "time": "2.1312763690948486s",
+            "result_file": "7.zip"
+        },
+        {
+            "case_name": "8",
+            "result": "fail",
+            "time": "3.426123857498169s",
+            "result_file": "8.zip"
+        },
+        {
+            "case_name": "9",
+            "result": "fail",
+            "time": "2.030984401702881s",
+            "result_file": "9.zip"
+        },
+        {
+            "case_name": "10",
+            "result": "fail",
+            "time": "2.2061920166015625s",
+            "result_file": "10.zip"
+        },
+        {
+            "case_name": "11",
+            "result": "fail",
+            "time": "2.642263650894165s",
+            "result_file": "11.zip"
+        },
+        {
+            "case_name": "12",
+            "result": "pass",
+            "time": "10.639287233352661s",
+            "result_file": "12.zip"
+        },
+        {
+            "case_name": "13",
+            "result": "pass",
+            "time": "5.550456762313843s",
+            "result_file": "13.zip"
+        },
+        {
+            "case_name": "14",
+            "result": "pass",
+            "time": "19.65841269493103s",
+            "result_file": "14.zip"
+        },
+        {
+            "case_name": "15",
+            "result": "fail",
+            "time": "1.9956793785095215s",
+            "result_file": "15.zip"
+        },
+        {
+            "case_name": "16",
+            "result": "pass",
+            "time": "7.799057483673096s",
+            "result_file": "16.zip"
+        },
+        {
+            "case_name": "17",
+            "result": "fail",
+            "time": "2.3467369079589844s",
+            "result_file": "17.zip"
+        },
+        {
+            "case_name": "18",
+            "result": "fail",
+            "time": "3.1536953449249268s",
+            "result_file": "18.zip"
+        },
+        {
+            "case_name": "19",
+            "result": "fail",
+            "time": "3.9806594848632812s",
+            "result_file": "19.zip"
+        },
+        {
+            "case_name": "20",
+            "result": "fail",
+            "time": "3.2376320362091064s",
+            "result_file": "20.zip"
+        },
+        {
+            "case_name": "21",
+            "result": "pass",
+            "time": "8.349711656570435s",
+            "result_file": "21.zip"
+        },
+        {
+            "case_name": "22",
+            "result": "pass",
+            "time": "7.383157730102539s",
+            "result_file": "22.zip"
+        },
+        {
+            "case_name": "23",
+            "result": "pass",
+            "time": "8.569331645965576s",
+            "result_file": "23.zip"
+        },
+        {
+            "case_name": "24",
+            "result": "pass",
+            "time": "7.4473114013671875s",
+            "result_file": "24.zip"
+        },
+        {
+            "case_name": "25",
+            "result": "fail",
+            "time": "2.2349815368652344s",
+            "result_file": "25.zip"
+        },
+        {
+            "case_name": "26",
+            "result": "pass",
+            "time": "7.757771253585815s",
+            "result_file": "26.zip"
+        },
+        {
+            "case_name": "27",
+            "result": "fail",
+            "time": "2.2435638904571533s",
+            "result_file": "27.zip"
+        },
+        {
+            "case_name": "28",
+            "result": "pass",
+            "time": "7.54720139503479s",
+            "result_file": "28.zip"
+        },
+        {
+            "case_name": "29",
+            "result": "pass",
+            "time": "8.325062274932861s",
+            "result_file": "29.zip"
+        },
+        {
+            "case_name": "30",
+            "result": "pass",
+            "time": "5.940998077392578s",
+            "result_file": "30.zip"
+        },
+        {
+            "case_name": "31",
+            "result": "fail",
+            "time": "2.0468969345092773s",
+            "result_file": "31.zip"
+        },
+        {
+            "case_name": "32",
+            "result": "fail",
+            "time": "3.3270533084869385s",
+            "result_file": "32.zip"
+        },
+        {
+            "case_name": "33",
+            "result": "pass",
+            "time": "5.681049108505249s",
+            "result_file": "33.zip"
+        },
+        {
+            "case_name": "34",
+            "result": "pass",
+            "time": "6.720275640487671s",
+            "result_file": "34.zip"
+        },
+        {
+            "case_name": "35",
+            "result": "pass",
+            "time": "6.730914354324341s",
+            "result_file": "35.zip"
+        },
+        {
+            "case_name": "36",
+            "result": "fail",
+            "time": "2.22273850440979s",
+            "result_file": "36.zip"
+        },
+        {
+            "case_name": "37",
+            "result": "pass",
+            "time": "9.55617618560791s",
+            "result_file": "37.zip"
+        },
+        {
+            "case_name": "38",
+            "result": "fail",
+            "time": "2.144761085510254s",
+            "result_file": "38.zip"
+        },
+        {
+            "case_name": "39",
+            "result": "pass",
+            "time": "7.642724990844727s",
+            "result_file": "39.zip"
+        },
+        {
+            "case_name": "40",
+            "result": "fail",
+            "time": "2.7497644424438477s",
+            "result_file": "40.zip"
+        },
+        {
+            "case_name": "41",
+            "result": "pass",
+            "time": "7.248239755630493s",
+            "result_file": "41.zip"
+        },
+        {
+            "case_name": "42",
+            "result": "fail",
+            "time": "2.566465139389038s",
+            "result_file": "42.zip"
+        },
+        {
+            "case_name": "43",
+            "result": "pass",
+            "time": "7.973782300949097s",
+            "result_file": "43.zip"
+        },
+        {
+            "case_name": "44",
+            "result": "fail",
+            "time": "2.1759159564971924s",
+            "result_file": "44.zip"
+        },
+        {
+            "case_name": "45",
+            "result": "fail",
+            "time": "3.9611926078796387s",
+            "result_file": "45.zip"
+        },
+        {
+            "case_name": "46",
+            "result": "pass",
+            "time": "6.810314893722534s",
+            "result_file": "46.zip"
+        },
+        {
+            "case_name": "47",
+            "result": "pass",
+            "time": "7.477387189865112s",
+            "result_file": "47.zip"
+        },
+        {
+            "case_name": "48",
+            "result": "fail",
+            "time": "1.9667232036590576s",
+            "result_file": "48.zip"
+        },
+        {
+            "case_name": "49",
+            "result": "fail",
+            "time": "2.241623878479004s",
+            "result_file": "49.zip"
+        },
+        {
+            "case_name": "50",
+            "result": "pass",
+            "time": "7.468236446380615s",
+            "result_file": "50.zip"
+        },
+        {
+            "case_name": "51",
+            "result": "fail",
+            "time": "2.194061279296875s",
+            "result_file": "51.zip"
+        },
+        {
+            "case_name": "52",
+            "result": "fail",
+            "time": "2.2105960845947266s",
+            "result_file": "52.zip"
+        },
+        {
+            "case_name": "53",
+            "result": "fail",
+            "time": "2.29337477684021s",
+            "result_file": "53.zip"
+        },
+        {
+            "case_name": "54",
+            "result": "fail",
+            "time": "2.883814573287964s",
+            "result_file": "54.zip"
+        },
+        {
+            "case_name": "55",
+            "result": "fail",
+            "time": "2.185422658920288s",
+            "result_file": "55.zip"
+        },
+        {
+            "case_name": "56",
+            "result": "pass",
+            "time": "7.98818039894104s",
+            "result_file": "56.zip"
+        },
+        {
+            "case_name": "57",
+            "result": "pass",
+            "time": "6.873501539230347s",
+            "result_file": "57.zip"
+        },
+        {
+            "case_name": "58",
+            "result": "pass",
+            "time": "8.679650068283081s",
+            "result_file": "58.zip"
+        },
+        {
+            "case_name": "59",
+            "result": "pass",
+            "time": "21.055824518203735s",
+            "result_file": "59.zip"
+        },
+        {
+            "case_name": "60",
+            "result": "pass",
+            "time": "8.30980920791626s",
+            "result_file": "60.zip"
+        },
+        {
+            "case_name": "61",
+            "result": "pass",
+            "time": "6.9433324337005615s",
+            "result_file": "61.zip"
+        },
+        {
+            "case_name": "62",
+            "result": "pass",
+            "time": "7.599543809890747s",
+            "result_file": "62.zip"
+        },
+        {
+            "case_name": "63",
+            "result": "fail",
+            "time": "2.3244247436523438s",
+            "result_file": "63.zip"
+        },
+        {
+            "case_name": "64",
+            "result": "fail",
+            "time": "2.1483473777770996s",
+            "result_file": "64.zip"
+        },
+        {
+            "case_name": "65",
+            "result": "fail",
+            "time": "1.9339442253112793s",
+            "result_file": "65.zip"
+        },
+        {
+            "case_name": "66",
+            "result": "fail",
+            "time": "2.3487470149993896s",
+            "result_file": "66.zip"
+        },
+        {
+            "case_name": "67",
+            "result": "pass",
+            "time": "7.553489923477173s",
+            "result_file": "67.zip"
+        },
+        {
+            "case_name": "68",
+            "result": "fail",
+            "time": "2.6738221645355225s",
+            "result_file": "68.zip"
+        },
+        {
+            "case_name": "69",
+            "result": "pass",
+            "time": "7.6008460521698s",
+            "result_file": "69.zip"
+        },
+        {
+            "case_name": "70",
+            "result": "fail",
+            "time": "2.414708375930786s",
+            "result_file": "70.zip"
+        },
+        {
+            "case_name": "71",
+            "result": "pass",
+            "time": "7.3005757331848145s",
+            "result_file": "71.zip"
+        },
+        {
+            "case_name": "72",
+            "result": "fail",
+            "time": "3.4214179515838623s",
+            "result_file": "72.zip"
+        },
+        {
+            "case_name": "73",
+            "result": "fail",
+            "time": "2.3036704063415527s",
+            "result_file": "73.zip"
+        },
+        {
+            "case_name": "74",
+            "result": "fail",
+            "time": "2.1826765537261963s",
+            "result_file": "74.zip"
+        },
+        {
+            "case_name": "75",
+            "result": "pass",
+            "time": "8.63175344467163s",
+            "result_file": "75.zip"
+        },
+        {
+            "case_name": "76",
+            "result": "pass",
+            "time": "10.16671085357666s",
+            "result_file": "76.zip"
+        },
+        {
+            "case_name": "77",
+            "result": "pass",
+            "time": "7.915362119674683s",
+            "result_file": "77.zip"
+        },
+        {
+            "case_name": "78",
+            "result": "pass",
+            "time": "7.020307779312134s",
+            "result_file": "78.zip"
+        },
+        {
+            "case_name": "79",
+            "result": "pass",
+            "time": "7.586724042892456s",
+            "result_file": "79.zip"
+        },
+        {
+            "case_name": "80",
+            "result": "pass",
+            "time": "9.531298160552979s",
+            "result_file": "80.zip"
+        },
+        {
+            "case_name": "81",
+            "result": "pass",
+            "time": "8.68572998046875s",
+            "result_file": "81.zip"
+        },
+        {
+            "case_name": "82",
+            "result": "fail",
+            "time": "2.197125196456909s",
+            "result_file": "82.zip"
+        },
+        {
+            "case_name": "83",
+            "result": "pass",
+            "time": "9.336815357208252s",
+            "result_file": "83.zip"
+        },
+        {
+            "case_name": "84",
+            "result": "fail",
+            "time": "5.739380359649658s",
+            "result_file": "84.zip"
+        },
+        {
+            "case_name": "85",
+            "result": "pass",
+            "time": "6.984603404998779s",
+            "result_file": "85.zip"
+        },
+        {
+            "case_name": "86",
+            "result": "fail",
+            "time": "2.233086585998535s",
+            "result_file": "86.zip"
+        },
+        {
+            "case_name": "87",
+            "result": "pass",
+            "time": "8.289003372192383s",
+            "result_file": "87.zip"
+        },
+        {
+            "case_name": "88",
+            "result": "pass",
+            "time": "7.428626537322998s",
+            "result_file": "88.zip"
+        },
+        {
+            "case_name": "89",
+            "result": "fail",
+            "time": "2.2124829292297363s",
+            "result_file": "89.zip"
+        },
+        {
+            "case_name": "90",
+            "result": "fail",
+            "time": "1.9667751789093018s",
+            "result_file": "90.zip"
+        },
+        {
+            "case_name": "91",
+            "result": "fail",
+            "time": "2.1720921993255615s",
+            "result_file": "91.zip"
+        },
+        {
+            "case_name": "92",
+            "result": "fail",
+            "time": "2.2807412147521973s",
+            "result_file": "92.zip"
+        },
+        {
+            "case_name": "93",
+            "result": "fail",
+            "time": "4.460637331008911s",
+            "result_file": "93.zip"
+        },
+        {
+            "case_name": "94",
+            "result": "fail",
+            "time": "2.479642629623413s",
+            "result_file": "94.zip"
+        },
+        {
+            "case_name": "95",
+            "result": "fail",
+            "time": "6.263700246810913s",
+            "result_file": "95.zip"
+        },
+        {
+            "case_name": "96",
+            "result": "pass",
+            "time": "7.18560528755188s",
+            "result_file": "96.zip"
+        },
+        {
+            "case_name": "97",
+            "result": "pass",
+            "time": "12.574437856674194s",
+            "result_file": "97.zip"
+        },
+        {
+            "case_name": "98",
+            "result": "pass",
+            "time": "6.536473274230957s",
+            "result_file": "98.zip"
+        },
+        {
+            "case_name": "99",
+            "result": "pass",
+            "time": "7.37010645866394s",
+            "result_file": "99.zip"
+        }
+    ]
+}

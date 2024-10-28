@@ -12,14 +12,22 @@
                 <th>测试名称</th>
                 <th>测试时间</th>
                 <th>测试链接</th>
+                <th>成功率</th>
+                <th>平均测试时长</th>
+                <th>成功用例平均时长</th>
+                <th>失败用例平均时长</th>
             </tr>
         </thead>
         <tbody>
-            {% for test in tests %}
+            {% for key, value in tests.items() %}
             <tr>
-                <td>{{ test.name }}</td>
-                <td>{{ test.time }}</td>
-                <td><a href="{{ test.link }}">查看详情</a></td>
+                <td>{{ key }}</td>
+                <td>{{ value.time }}</td>
+                <td><a href="{{ value.link }}">查看详情</a></td>
+                <td>{{ value.success_rate }}</td>
+                <td>{{ value.average_time }}</td>
+                <td>{{ value.average_success_time }}</td>
+                <td>{{ value.average_fail_time }}</td>
             </tr>
             {% endfor %}
         </tbody>

@@ -10,7 +10,7 @@ import sys
 app = Flask(__name__)
 
 # 测试数据存储
-test_summary_data = []
+test_summary_data = {}
 test_details = {}
 test_summary_data_file = ""
 test_details_file = ""
@@ -58,6 +58,27 @@ def show_file(test_id, case_id, file_name):
         return  jsonify({"message":f"File '{file_name}' not found"}), 404
 
 
+@app.route('/update_test_summary', methods=['GET'])
+def update_test_summary():
+
+    name = request.args.get('name')
+    success_rate = request.args.get('success_rate')
+    average_time = request.args.get('average_time')
+    average_success_time = request.args.get('average_success_time')
+    average_fail_time = request.args.get('average_fail_time')
+
+    json_obj = {}
+    json_obj["time"] = test_summary_data[name]["time"]
+    json_obj["link"] = test_summary_data[name]["link"]
+    json_obj["success_rate"] = str(float(success_rate)*100) + "%" 
+    json_obj["average_time"] = average_time
+    json_obj["average_success_time"] = average_success_time
+    json_obj["average_fail_time"] = average_fail_time
+
+    test_summary_data[name] = json_obj
+    return jsonify({"message": "test summary updated successfully!", "new item": json_obj})
+
+
 @app.route('/append_test_summary', methods=['GET'])
 def append_test_summary():
 
@@ -66,10 +87,13 @@ def append_test_summary():
     link = request.args.get('link')
 
     json_obj = {}
-    json_obj["name"] = name
     json_obj["time"] = time
     json_obj["link"] = link
-    test_summary_data.append(json_obj)
+    json_obj["success_rate"] = ""
+    json_obj["average_time"] = ""
+    json_obj["average_success_time"] = ""
+    json_obj["average_fail_time"] = ""
+    test_summary_data[name]=json_obj
     return jsonify({"message": "test summary added successfully!", "new item": json_obj})
 
 
@@ -113,6 +137,12 @@ def store_test_details_data_interface():
     store_test_details_data(test_details_file)
     return jsonify({"message":"store test details data success"})
 
+
+@app.route("/re_load_data", methods=['GET'])
+def re_load_data():
+    global test_summary_data,test_details
+    load_data(test_summary_data_file, test_details_file)
+    return jsonify({"message":"re-load data success"})
 
 # 从落地文件中进行test_summary_data和test_details的加载，目前测试用例的tps不高于0.06，从文件读取性能足够
 def load_data(test_summary_data_file, test_details_file):
