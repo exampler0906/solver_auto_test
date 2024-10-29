@@ -25,7 +25,7 @@ def index():
 @app.route('/test_detail/<test_id>')
 def test_detail(test_id):
     cases = test_details.get(test_id, [])
-    return render_template('test_detail.html', cases=cases, test_id = test_id, template_file_name=g_template_file_name)
+    return render_template('test_detail.html', cases=cases, test_id = test_id)
 
 # 路由：下载落地文件
 @app.route('/download/<test_id>/<file_name>')
@@ -37,6 +37,7 @@ def download_file(test_id, file_name):
 # 展示求解日志，模板文件和配置文件
 @app.route('/show_file/<test_id>/<case_id>/<file_name>')
 def show_file(test_id, case_id, file_name):
+    
     # 文件存储目录
     directory = os.path.join(app.root_path)
     file_path = os.path.join(directory, test_id, case_id, file_name)

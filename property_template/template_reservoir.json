@@ -337,9 +337,9 @@
                                 0.5,
                                 0.5
                             ],
-                            "NX": {"test_item" : true, "value_range":[20, 100]},
-                            "NY": {"test_item" : true, "value_range":[20, 100]},
-                            "NZ": {"test_item" : true, "value_range":[2, 10]},
+                            "NX": {"test_item" : true, "value_range":[20, 40]},
+                            "NY": {"test_item" : true, "value_range":[20, 40]},
+                            "NZ": {"test_item" : true, "value_range":[2, 4]},
                             "PERMI": { "test_item" : true, "value_range":[1, 500] },
                             "PERMJ": { "test_item" : true, "value_range":[1, 500] },
                             "PERMK": { "test_item" : true, "value_range":[1, 500] },

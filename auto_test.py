@@ -494,9 +494,9 @@ def run_solver(case_id, template_file_path, test_data_object):
     # 将结果文件压缩
     compress_directory_to_zip(current_case_storage_path, f"{current_time}/" + zip_file_path)
 
-    # 拷贝模板文件到当前文件夹
-    template_file_name = template_file_path.split("/")[-1]
-    shutil.copy(template_file_path, f"{current_case_storage_path}/{template_file_name}")
+    # # 拷贝模板文件到当前文件夹
+    # template_file_name = template_file_path.split("/")[-1]
+    # shutil.copy(template_file_path, f"{current_case_storage_path}/{template_file_name}")
 
 def send_message_to_feishu():
 
@@ -579,14 +579,6 @@ def run_auto_test(url, template_file_path, total_test_time):
         logger.info(f"mesh generate finish")
         run_solver(i, template_file_path, test_data_object)
         logger.info(f"test case {i} finish")
-    
-    # 将单轮测试结果落地 
-    response = requests.get(url + f"/store_test_summary_data")
-    if response.status_code == 200:
-            logger.info(f"store test summary data success")
-    else:
-        logger.warning(f"store test summary data fail")
-
 
     # 将测试的汇总结果更新到表格
     success_rate = float(test_data_object["success_times"]/int(total_test_time))
@@ -599,6 +591,14 @@ def run_auto_test(url, template_file_path, total_test_time):
             logger.info(f"update test summary data success")
     else:
         logger.warning(f"update test summary data fail")
+
+    
+    # 将单轮测试结果落地 
+    response = requests.get(url + f"/store_test_summary_data")
+    if response.status_code == 200:
+            logger.info(f"store test summary data success")
+    else:
+        logger.warning(f"store test summary data fail")
 
 
     # 发送飞书消息
