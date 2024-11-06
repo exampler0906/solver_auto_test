@@ -142,13 +142,13 @@ def init_environment(url, template_file_path):
     
     return True
 
-def analyze_json_array(json_array, need_test_keys):
+def analyze_json_array(json_array, need_test_keys, case_id):
     if isinstance(json_array, list):
         for item in json_array:
             if isinstance(item, list):
-                analyze_json_array(item, need_test_keys)
+                analyze_json_array(item, need_test_keys, case_id)
             elif isinstance(item, dict):
-                analyze_json(item, need_test_keys)
+                analyze_json(item, need_test_keys, case_id)
 
 
 # 随机生成在指定范围内的日期
@@ -160,7 +160,7 @@ def random_date(start, end):
     return random_date_string
 
 
-def analyze_json(json_object, need_test_keys):
+def analyze_json(json_object, need_test_keys, case_id):
     for key, value in json_object.items():
         
         # sgt 气液相渗表-气体饱和度主导特殊处理
@@ -190,37 +190,27 @@ def analyze_json(json_object, need_test_keys):
             # 用防止井位置重复
             well_position_set = set()
 
-            # 随机增加井的数量，先给个拍脑袋的数量1-5口吧
-            # 先保证至少有一口注入井和一口生产井
-            
-            well_object_pro = copy.deepcopy(default_production_well_config)
-            well_object_inj = copy.deepcopy(default_injection_well_config)
-            well_object_pro["Name"] = "pro"
-            well_object_inj["Name"] = "inj"
-            value.append(well_object_pro)
-            value.append(well_object_inj)
-
-            well_num = random.randint(1,3)
+            # 随机增加井的数量，先给个拍脑袋的数量1-10口吧
+            well_num = random.randint(1,5)
             for i in range(0, well_num):
                 well_object = {}
                 well_type = random.randint(1,2)
                 if well_type == 1:
                     well_object = copy.deepcopy(default_injection_well_config)
-                    well_object["Name"] = "inj" + str(i)
                 elif well_type == 2:
                     well_object = copy.deepcopy(default_production_well_config)
-                    well_object["Name"] = "pro" + str(i)
+                well_object["Name"] = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
                 value.append(well_object)
 
             for well_item in value:
                 if "test_item" in well_item:
                     # 随机变更井事件的数量
-                    event_num = random.randint(1,3)
-
+                    event_num = random.randint(1,10)
                     for i in range(0, event_num):
-                        if well_item["Name"].startswith("inj"):
+                        random_num = random.randint(1, 2)
+                        if random_num == 1:
                             well_item["Events"].append(copy.deepcopy(default_injection_well_event_config))
-                        elif well_item["Name"].startswith("pro"):
+                        elif random_num == 2:
                             well_item["Events"].append(copy.deepcopy(default_production_well_event_config))
             
                     for event in well_item["Events"]:
@@ -247,11 +237,11 @@ def analyze_json(json_object, need_test_keys):
                                 total_val = 0
 
                                 for i in range(0, mol_size-1):
-                                    temp_value = round(abs(random.uniform(0, upper_limit)), 2)
+                                    temp_value = random.uniform(0, upper_limit)
                                     total_val = total_val + temp_value
                                     upper_limit = upper_limit - temp_value
                                     molefrac.append(temp_value)
-                                molefrac.append(round((1-total_val), 2))
+                                molefrac.append(1-total_val)
                         event["MOLEFRAC"] = molefrac
 
                         # 控制条件
@@ -270,12 +260,12 @@ def analyze_json(json_object, need_test_keys):
                             elif random_num == 2:
                                 temp_obj["Limit"] = "MAX"
                                 temp_obj["Parameter"] = "STO"
-                                temp_obj["Value"] = round(random.uniform(0, 10000), 2)
+                                temp_obj["Value"] = random.uniform(0, 10000)
 
                             elif random_num == 3:
                                 temp_obj["Limit"] = "MAX"
                                 temp_obj["Parameter"] = "STL"
-                                temp_obj["Value"] = round(random.uniform(0, 10000), 2)
+                                temp_obj["Value"] = random.uniform(0, 10000)
                         else:
                         # 对于注入井来说
                             random_num = random.randint(1, 2)
@@ -289,12 +279,12 @@ def analyze_json(json_object, need_test_keys):
                                 temp_obj["Limit"] = "MAX"
                                 temp_obj["Parameter"] = "STG"
                                 # 井底压力拍脑袋给一个
-                                temp_obj["Value"] = round(random.uniform(100.0, 2000.0), 2)
+                                temp_obj["Value"] = random.uniform(100.0, 2000.0)
 
                         event["Constraints"].append(temp_obj)
 
                         # 随机生成一个井事件的时间
-                        event["Date"] = random_date(datetime.strptime("2025-01-01", "%Y-%m-%d"), datetime.strptime("2026-12-31", "%Y-%m-%d"))
+                        event["Date"] = random_date(datetime.strptime("2000-01-01", "%Y-%m-%d"), datetime.strptime("2100-01-01", "%Y-%m-%d"))
 
                         # 变更井的状态, 井关闭状态事件就跳过了，没有实际的处理意义
                         random_num = random.randint(1, 1)
@@ -347,21 +337,18 @@ def analyze_json(json_object, need_test_keys):
 
             # 网格实际尺寸也是拍脑袋想的
             i_var = []
-            i_var_value = random.randint(1, 100)
             for i in range(0, value["Grid"]["NX"]):
-                i_var.append(i_var_value)
+                i_var.append(random.uniform(1, 100))
             value["Grid"]["IVAR"] = i_var
 
             j_var = []
-            j_var_value = random.randint(1, 100)
             for i in range(0, value["Grid"]["NY"]):
-                j_var.append(j_var_value)
+                j_var.append(random.uniform(1, 100))
             value["Grid"]["JVAR"] = j_var
 
             k_var = []
-            k_var_value = random.randint(1, 100)
             for i in range(0, value["Grid"]["NZ"]):
-                k_var.append(k_var_value)
+                k_var.append(random.uniform(1, 100))
             value["Grid"]["KVAR"] = k_var
 
             # 岩石压缩系数和参考压力未处理
@@ -376,18 +363,20 @@ def analyze_json(json_object, need_test_keys):
             min_value = value_range[0]
             max_value = value_range[1]
 
-            if isinstance(min_value, int):
-                random_num = random.randint(min_value, max_value)
-            else:
-                random_num = round(random.uniform(min_value, max_value), 2)
-            json_object[key] = random_num
+            # if isinstance(min_value, int):
+            #     random_num = random.randint(min_value, max_value)
+            # else:
+            #     random_num = random.uniform(min_value, max_value)
+
+            # 针对pres，测试其稳定性
+            json_object[key] = min_value + case_id*1000
             need_test_keys.append(key)
 
         elif isinstance(value, dict):
-            analyze_json(value, need_test_keys)
+            analyze_json(value, need_test_keys, case_id)
 
         elif isinstance(value, list):
-            analyze_json_array(value, need_test_keys)
+            analyze_json_array(value, need_test_keys, case_id)
 
     return True
     
@@ -411,7 +400,7 @@ def random_change_parameters(template_file_path, case_id):
 
     # 遍历json，找出需要测试的key,并将需要测试的key赋予实际的值
     need_test_keys = []
-    if analyze_json(object_js, need_test_keys):
+    if analyze_json(object_js, need_test_keys, case_id):
         logger.info(f"need test keys: {need_test_keys}")
     else:
         return False

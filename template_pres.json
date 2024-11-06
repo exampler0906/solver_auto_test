@@ -193,7 +193,7 @@
                         ]
                     },
                     "InitialSetting": {
-                        "PRES": 15000,
+                        "PRES": { "test_item" : true, "value_range":[10000, 30000] },
                         "SW": 0,
                         "Type": "user"
                     },
@@ -204,27 +204,7 @@
                                 "2025-02-01_00-00-00",
                                 "2025-03-01_00-00-00",
                                 "2025-04-01_00-00-00",
-                                "2025-05-01_00-00-00",
-                                "2025-06-01_00-00-00",
-                                "2025-07-01_00-00-00",
-                                "2025-08-01_00-00-00",
-                                "2025-09-01_00-00-00",
-                                "2025-10-01_00-00-00",
-                                "2025-11-01_00-00-00",
-                                "2025-12-01_00-00-00",
-                                "2026-01-01_00-00-00",
-                                "2026-02-01_00-00-00",
-                                "2026-03-01_00-00-00",
-                                "2026-04-01_00-00-00",
-                                "2026-05-01_00-00-00",
-                                "2026-06-01_00-00-00",
-                                "2026-07-01_00-00-00",
-                                "2026-08-01_00-00-00",
-                                "2026-09-01_00-00-00",
-                                "2026-10-01_00-00-00",
-                                "2026-11-01_00-00-00",
-                                "2026-12-01_00-00-00",
-                                "2027-01-01_00-00-00"
+                                "2025-05-01_00-00-00"
                             ],
                             "DateStruct": [
                                 {
@@ -306,7 +286,6 @@
                         }
                     },
                     "Reservoir": {
-                        "test_item":true,
                         "Grid": {
                             "ACTIVE": "twophase-6-20_active.bin",
                             "IVAR": [
@@ -357,13 +336,13 @@
                                 0.5,
                                 0.5
                             ],
-                            "NX": {"test_item" : true, "value_range":[25, 30]},
-                            "NY": {"test_item" : true, "value_range":[25, 30]},
-                            "NZ": {"test_item" : true, "value_range":[2, 3]},
-                            "PERMI": { "test_item" : true, "value_range":[1, 500] },
-                            "PERMJ": { "test_item" : true, "value_range":[1, 500] },
-                            "PERMK": { "test_item" : true, "value_range":[1, 500] },
-                            "POR": { "test_item" : true, "value_range":[0.1, 0.7] }
+                            "NX": 20,
+                            "NY": 20,
+                            "NZ": 2,
+                            "PERMI": 50,
+                            "PERMJ": 50,
+                            "PERMK": 50,
+                            "POR": 0.25
                         },
                         "GridType": "structural_mesh",
                         "RockCompressibility": {
@@ -450,6 +429,102 @@
                         }
                     },
                     "Wells": [
+                        {
+                            "DIR": "K",
+                            "Events": [
+                                {
+                                    "Constraints": [
+                                        {
+                                            "Action": "continue",
+                                            "Limit": "MIN",
+                                            "Parameter": "BHP",
+                                            "Value": 10000
+                                        }
+                                    ],
+                                    "Date": "2000-01-01",
+                                    "InjectedFluid": "",
+                                    "MOLEFRAC": [
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "Status": "open",
+                                    "Type": "producer"
+                                }
+                            ],
+                            "GEOFAC": 0.37,
+                            "Name": "PRO",
+                            "Perforations": [
+                                {
+                                    "BlockBottom": 1200.5,
+                                    "BlockIdx": [
+                                        20,
+                                        20,
+                                        2
+                                    ],
+                                    "BlockTop": 1201,
+                                    "Connection": 0,
+                                    "FF": 1,
+                                    "Length": 0.5,
+                                    "Status": "open"
+                                }
+                            ],
+                            "RW": 0.1,
+                            "SKIN": 0,
+                            "Status": "open",
+                            "WFRAC": 1
+                        },
+                        {
+                            "DIR": "K",
+                            "Events": [
+                                {
+                                    "Constraints": [
+                                        {
+                                            "Action": "continue",
+                                            "Limit": "MAX",
+                                            "Parameter": "STG",
+                                            "Value": 129.6
+                                        }
+                                    ],
+                                    "Date": "2000-01-01",
+                                    "InjectedFluid": "solvent",
+                                    "MOLEFRAC": [
+                                        0,
+                                        1,
+                                        0,
+                                        0,
+                                        0,
+                                        0
+                                    ],
+                                    "Status": "open",
+                                    "Type": "injector"
+                                }
+                            ],
+                            "GEOFAC": 0.37,
+                            "Name": "INJ",
+                            "Perforations": [
+                                {
+                                    "BlockBottom": 1200.5,
+                                    "BlockIdx": [
+                                        1,
+                                        1,
+                                        2
+                                    ],
+                                    "BlockTop": 1201,
+                                    "Connection": 0,
+                                    "FF": 1,
+                                    "Length": 0.5,
+                                    "Status": "open"
+                                }
+                            ],
+                            "RW": 0.1,
+                            "SKIN": 0,
+                            "Status": "open",
+                            "WFRAC": 1
+                        }
                     ],
                     "nsolver": {
                         "NewtonLS": {
@@ -458,26 +533,24 @@
                             "dtol": 1000,
                             "lineSearchType": "basic",
                             "lsolver": {
-                                "gmres": {
-                                    "atol": 1e-06,
-                                    "converged_max_it": true,
-                                    "dtol": 1000,
-                                    "maxit": 300,
-                                    "monitor_step": 1,
-                                    "pc": {
-                                        "RASchwarz": {
-                                            "overlap": 1,
-                                            "subdomain_solver": {
-                                                "ilu": {
-                                                    "fill_in_level": 0
-                                                }
-                                            }
-                                        }
-                                    },
-                                    "restart": 30,
-                                    "rtol": 1e-08,
-                                    "zero_initialize": false
-                                }
+                                  "PetscKSPSolver":{
+                                     "petsc_option": [
+                                         "-ksp_type gmres",
+                                         "-ksp_max_it 300",
+                                         "-ksp_atol 1.e-6",
+                                         "-ksp_rtol 1.e-8",
+                                         "-ksp_gmres_restart 30",
+                                         "-pc_type asm",
+                                         "-pc_asm_overlap 1",
+                                         "-sub_pc_type ilu",
+                                         "-sub_pc_factor_levels 0",
+                                         "-log_view",
+                                         "-snes_monitor",
+                                         "-snes_converged_reason",
+                                         "-ksp_monitor",
+                                         "-ksp_converged_reason"
+                                     ]
+                                 }
                             },
                             "maxit": 10,
                             "monitor_step": 1,

@@ -1,0 +1,165 @@
+Read plot3D grid finished!
+Solve in transient mode with 1 outer corrector
+Time Step 1, t = 0, step size = 86400
+Outer Iteration 0, residual norm = 1, norm/norm0 = 1
+  Iteration 0, residual norm = 8718321.918, normr/normr0 = 1
+  Iteration 1, residual norm = 2066748.39, normr/normr0 = 0.2370580497
+  Iteration 2, residual norm = 1070033.721, normr/normr0 = 0.122733908
+  Iteration 3, residual norm = 599506.4043, normr/normr0 = 0.06876396742
+  Iteration 4, residual norm = 350948.7167, normr/normr0 = 0.040254159
+  Iteration 5, residual norm = 211526.5783, normr/normr0 = 0.02426230418
+  Iteration 6, residual norm = 122512.0783, normr/normr0 = 0.01405225449
+  Iteration 7, residual norm = 70719.67705, normr/normr0 = 0.008111615712
+  Iteration 8, residual norm = 43346.85504, normr/normr0 = 0.004971926415
+  Iteration 9, residual norm = 26221.2063, normr/normr0 = 0.003007597855
+  Iteration 10, residual norm = 15706.35935, normr/normr0 = 0.001801534687
+  Iteration 11, residual norm = 9778.992752, normr/normr0 = 0.001121659976
+  Iteration 12, residual norm = 5651.3366, normr/normr0 = 0.0006482138023
+  Iteration 13, residual norm = 3143.651034, normr/normr0 = 0.0003605798299
+  Iteration 14, residual norm = 1927.214713, normr/normr0 = 0.0002210534012
+  Iteration 15, residual norm = 1130.196968, normr/normr0 = 0.000129634691
+  Iteration 16, residual norm = 621.9087214, normr/normr0 = 7.133353497e-05
+  Iteration 17, residual norm = 356.0624343, normr/normr0 = 4.084070739e-05
+  Iteration 18, residual norm = 187.0020088, normr/normr0 = 2.144931221e-05
+  Iteration 19, residual norm = 98.03290957, normr/normr0 = 1.124447004e-05
+  Iteration 20, residual norm = 55.13752336, normr/normr0 = 6.324327535e-06
+  Iteration 21, residual norm = 31.61274338, normr/normr0 = 3.6260124e-06
+  Iteration 22, residual norm = 17.09716255, normr/normr0 = 1.961061166e-06
+  Iteration 23, residual norm = 9.184365214, normr/normr0 = 1.053455619e-06
+  Iteration 24, residual norm = 5.287731615, normr/normr0 = 6.06507957e-07
+  Iteration 25, residual norm = 2.657787751, normr/normr0 = 3.048508389e-07
+  Iteration 26, residual norm = 1.317835497, normr/normr0 = 1.511570127e-07
+  Iteration 27, residual norm = 0.7146695892, normr/normr0 = 8.19732967e-08
+  Iteration 28, residual norm = 0.4069345364, normr/normr0 = 4.667578695e-08
+  Iteration 29, residual norm = 0.2073070745, normr/normr0 = 2.3778323e-08
+  Iteration 30, residual norm = 0.08958639564, normr/normr0 = 1.027564668e-08
+  Iteration 31, residual norm = 0.05353957282, normr/normr0 = 6.141041054e-09
+  Gmres converged at iteration 31, Residual norm = 0.05353957282, rtol = 1e-08
+  Iteration 0, residual norm = 334903.707, normr/normr0 = 1
+  Iteration 1, residual norm = 146331.4308, normr/normr0 = 0.4369358347
+  Iteration 2, residual norm = 77750.99738, normr/normr0 = 0.2321592618
+  Iteration 3, residual norm = 44850.01886, normr/normr0 = 0.1339191473
+  Iteration 4, residual norm = 26976.95601, normr/normr0 = 0.08055138071
+  Iteration 5, residual norm = 16211.14135, normr/normr0 = 0.04840538044
+  Iteration 6, residual norm = 9423.714013, normr/normr0 = 0.02813857779
+  Iteration 7, residual norm = 5600.66227, normr/normr0 = 0.01672320178
+  Iteration 8, residual norm = 3390.448083, normr/normr0 = 0.01012365051
+  Iteration 9, residual norm = 2046.920105, normr/normr0 = 0.006111966102
+  Iteration 10, residual norm = 1220.947857, normr/normr0 = 0.003645668387
+  Iteration 11, residual norm = 694.5993983, normr/normr0 = 0.002074027202
+  Iteration 12, residual norm = 393.8098855, normr/normr0 = 0.001175889897
+  Iteration 13, residual norm = 230.0622913, normr/normr0 = 0.0006869505666
+  Iteration 14, residual norm = 132.6817118, normr/normr0 = 0.0003961786897
+  Iteration 15, residual norm = 74.9094446, normr/normr0 = 0.0002236745758
+  Iteration 16, residual norm = 42.65907274, normr/normr0 = 0.0001273771291
+  Iteration 17, residual norm = 21.77790192, normr/normr0 = 6.502735404e-05
+  Iteration 18, residual norm = 11.29625977, normr/normr0 = 3.37298738e-05
+  Iteration 19, residual norm = 6.392949341, normr/normr0 = 1.908891782e-05
+  Iteration 20, residual norm = 3.413030097, normr/normr0 = 1.019107889e-05
+  Iteration 21, residual norm = 1.907448235, normr/normr0 = 5.695512456e-06
+  Iteration 22, residual norm = 1.013906559, normr/normr0 = 3.02745696e-06
+  Iteration 23, residual norm = 0.5691898169, normr/normr0 = 1.699562606e-06
+  Iteration 24, residual norm = 0.2931881076, normr/normr0 = 8.754400189e-07
+  Iteration 25, residual norm = 0.1453647276, normr/normr0 = 4.340493238e-07
+  Iteration 26, residual norm = 0.075825509, normr/normr0 = 2.264098826e-07
+  Iteration 27, residual norm = 0.04245450933, normr/normr0 = 1.267663165e-07
+  Iteration 28, residual norm = 0.02225737514, normr/normr0 = 6.645902888e-08
+  Iteration 29, residual norm = 0.01021791742, normr/normr0 = 3.051001588e-08
+  Iteration 30, residual norm = 0.004750035667, normr/normr0 = 1.418328781e-08
+  Iteration 31, residual norm = 0.003232753961, normr/normr0 = 9.652786438e-09
+  Gmres converged at iteration 31, Residual norm = 0.003232753961, rtol = 1e-08
+  Iteration 0, residual norm = 68267.74965, normr/normr0 = 1
+  Iteration 1, residual norm = 27733.52903, normr/normr0 = 0.406246422
+  Iteration 2, residual norm = 14131.14753, normr/normr0 = 0.2069959476
+  Iteration 3, residual norm = 7787.25938, normr/normr0 = 0.1140693727
+  Iteration 4, residual norm = 4468.621403, normr/normr0 = 0.06545728292
+  Iteration 5, residual norm = 2658.604738, normr/normr0 = 0.03894378753
+  Iteration 6, residual norm = 1541.079601, normr/normr0 = 0.0225740501
+  Iteration 7, residual norm = 878.5654951, normr/normr0 = 0.01286940758
+  Iteration 8, residual norm = 512.9985107, normr/normr0 = 0.007514507412
+  Iteration 9, residual norm = 315.4298292, normr/normr0 = 0.004620480839
+  Iteration 10, residual norm = 192.7842347, normr/normr0 = 0.002823943015
+  Iteration 11, residual norm = 109.8182656, normr/normr0 = 0.00160864048
+  Iteration 12, residual norm = 62.20669084, normr/normr0 = 0.0009112163673
+  Iteration 13, residual norm = 37.1890571, normr/normr0 = 0.0005447529366
+  Iteration 14, residual norm = 21.38645511, normr/normr0 = 0.0003132731812
+  Iteration 15, residual norm = 11.9564041, normr/normr0 = 0.0001751398598
+  Iteration 16, residual norm = 7.101815923, normr/normr0 = 0.0001040288564
+  Iteration 17, residual norm = 3.687364941, normr/normr0 = 5.401327801e-05
+  Iteration 18, residual norm = 1.845115476, normr/normr0 = 2.702762996e-05
+  Iteration 19, residual norm = 1.055064997, normr/normr0 = 1.54548085e-05
+  Iteration 20, residual norm = 0.5730480878, normr/normr0 = 8.394125934e-06
+  Iteration 21, residual norm = 0.3198535633, normr/normr0 = 4.685280604e-06
+  Iteration 22, residual norm = 0.1684518789, normr/normr0 = 2.467517676e-06
+  Iteration 23, residual norm = 0.09609963483, normr/normr0 = 1.407687163e-06
+  Iteration 24, residual norm = 0.0505692105, normr/normr0 = 7.407481681e-07
+  Iteration 25, residual norm = 0.02530937685, normr/normr0 = 3.707369436e-07
+  Iteration 26, residual norm = 0.01293337127, normr/normr0 = 1.894506753e-07
+  Iteration 27, residual norm = 0.007295993814, normr/normr0 = 1.068732139e-07
+  Iteration 28, residual norm = 0.003935400026, normr/normr0 = 5.764654681e-08
+  Iteration 29, residual norm = 0.001780402997, normr/normr0 = 2.60797083e-08
+  Iteration 30, residual norm = 0.0007734258733, normr/normr0 = 1.132930084e-08
+  Iteration 31, residual norm = 0.0004873196123, normr/normr0 = 7.13835764e-09
+  Gmres converged at iteration 31, Residual norm = 0.0004873196123, rtol = 1e-08
+  Iteration 0, residual norm = 81.10073538, normr/normr0 = 1
+  Iteration 1, residual norm = 27.11367688, normr/normr0 = 0.3343209745
+  Iteration 2, residual norm = 11.99213403, normr/normr0 = 0.1478671429
+  Iteration 3, residual norm = 6.162867151, normr/normr0 = 0.0759902746
+  Iteration 4, residual norm = 3.597771124, normr/normr0 = 0.04436175711
+  Iteration 5, residual norm = 2.092676531, normr/normr0 = 0.02580342239
+  Iteration 6, residual norm = 1.189403721, normr/normr0 = 0.01466575753
+  Iteration 7, residual norm = 0.6861165816, normr/normr0 = 0.008460053764
+  Iteration 8, residual norm = 0.4006885208, normr/normr0 = 0.004940627467
+  Iteration 9, residual norm = 0.2400337924, normr/normr0 = 0.002959699332
+  Iteration 10, residual norm = 0.1460535205, normr/normr0 = 0.001800890212
+  Iteration 11, residual norm = 0.08764424468, normr/normr0 = 0.001080683723
+  Iteration 12, residual norm = 0.05048953522, normr/normr0 = 0.0006225533589
+  Iteration 13, residual norm = 0.02862876237, normr/normr0 = 0.0003530025004
+  Iteration 14, residual norm = 0.01692020582, normr/normr0 = 0.0002086319654
+  Iteration 15, residual norm = 0.009775859961, normr/normr0 = 0.0001205397203
+  Iteration 16, residual norm = 0.005575039651, normr/normr0 = 6.874215905e-05
+  Iteration 17, residual norm = 0.003111666344, normr/normr0 = 3.836791774e-05
+  Iteration 18, residual norm = 0.001588045405, normr/normr0 = 1.95811468e-05
+  Iteration 19, residual norm = 0.0008611951081, normr/normr0 = 1.06188323e-05
+  Iteration 20, residual norm = 0.0004594500716, normr/normr0 = 5.665177627e-06
+  Iteration 21, residual norm = 0.0002630814611, normr/normr0 = 3.243885027e-06
+  Iteration 22, residual norm = 0.000141497537, normr/normr0 = 1.744713366e-06
+  Iteration 23, residual norm = 7.571615966e-05, normr/normr0 = 9.336063269e-07
+  Iteration 24, residual norm = 4.243424591e-05, normr/normr0 = 5.232288673e-07
+  Iteration 25, residual norm = 2.163667421e-05, normr/normr0 = 2.667876451e-07
+  Iteration 26, residual norm = 1.037275557e-05, normr/normr0 = 1.278996488e-07
+  Iteration 27, residual norm = 5.631143124e-06, normr/normr0 = 6.94339342e-08
+  Iteration 28, residual norm = 3.164608231e-06, normr/normr0 = 3.902070944e-08
+  Iteration 29, residual norm = 1.509717558e-06, normr/normr0 = 1.861533747e-08
+  Iteration 30, residual norm = 6.237826153e-07, normr/normr0 = 7.691454491e-09
+  Gmres converged at iteration 30, Residual norm = 6.237826153e-07, atol = 1e-06
+  Iteration 0, residual norm = 0.0005589061157, normr/normr0 = 1
+  Iteration 1, residual norm = 0.0002255335042, normr/normr0 = 0.4035266351
+  Iteration 2, residual norm = 0.0001119175728, normr/normr0 = 0.2002439581
+  Iteration 3, residual norm = 6.044332865e-05, normr/normr0 = 0.1081457636
+  Iteration 4, residual norm = 3.544627791e-05, normr/normr0 = 0.06342080882
+  Iteration 5, residual norm = 2.099833967e-05, normr/normr0 = 0.03757042387
+  Iteration 6, residual norm = 1.19672159e-05, normr/normr0 = 0.02141185355
+  Iteration 7, residual norm = 6.882342946e-06, normr/normr0 = 0.01231395176
+  Iteration 8, residual norm = 4.058108867e-06, normr/normr0 = 0.00726080598
+  Iteration 9, residual norm = 2.46661381e-06, normr/normr0 = 0.004413288281
+  Iteration 10, residual norm = 1.504587336e-06, normr/normr0 = 0.0026920216
+  Iteration 11, residual norm = 8.717726025e-07, normr/normr0 = 0.001559783617
+  Gmres converged at iteration 11, Residual norm = 8.717726025e-07, atol = 1e-06
+NewtonLS converged at iteration 5, Residual norm = 8.859494317e-09, atol = 1e-05
+
+Solver Statistics:
+-------------------
+Total Non-Linear Steps: 5
+Success Non-Linear Steps: 5
+Failed Non-Linear Steps: 0
+- - - - - - - - - -
+Total Linear Steps: 134
+Success Linear Steps: 134
+Failed Linear Steps: 0
+-------------------
+
+Outer Iteration 1, residual norm = 1, norm/norm0 = 1
+
+Time Step 2, t = 86400, step size = 172800
+Outer Iteration 0, residual norm = 1, norm/norm0 = 1
